@@ -1,7 +1,7 @@
 //: Playground - noun: a place where people can play
 
 //
-//  NaiveGradientDescent
+//  NaiveUnivariateGradientDescent
 //
 //  Created by Albertino Padin on 4/6/18.
 //  Copyright © 2018 Albertino Padin. All rights reserved.
@@ -9,7 +9,7 @@
 
 import Foundation
 
-// EXTREMELY Naive Gradient Descent
+// EXTREMELY Naive Univariate Gradient Descent
 // This is the linear relationship y = x. Very simple.
 // Generalized, it is y = mx, where m = 1.
 // This algorithm naively attempts gradient descent to find the correct m, starting at a specified value.
