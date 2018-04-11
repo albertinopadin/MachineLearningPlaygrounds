@@ -36,11 +36,8 @@ func costFunctionPartialDerivative(xValues: [Double], actualYs: [Double], predic
 }
 
 func scaleAndNormalizeValues(values: [Double]) -> [Double] {
-    print("scaleAndNormalizeValues: \(values)")
     let range = values.max()! - values.min()!
     let average = values.reduce(0, +) / Double(values.count)
-    print("Range: \(range), average: \(average)")
-    
     return values.map { ($0 - average) / range }
 }
 
@@ -53,15 +50,11 @@ public func scaledMultivariateGradientDescent(initialZValues: [Double],
     var predictedYs = [Double]()
     var minimumErrorFound = [Bool](repeating: false, count: initialZValues.count)
     var zVals: [Double] = initialZValues
-//    let scaledYValues = scaleAndNormalizeValues(values: yValues)
     let scaledXValues = scaleAndNormalizeValues(values: xValues)
-//    print("scaledXValues: \(scaledXValues)")
-//    print("scaledYValues: \(scaledYValues)")
     
     // Gradient descent loop:
     for iteration in 0...maxIterations {
         predictedYs = batcHypothesis(zValues: zVals, xValues: xValues)
-//        print("Predicted: \(predictedYs)")
         
         // Update cost function for each z-value simultaneously:
         let currentZValues = zVals
